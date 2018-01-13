@@ -12,7 +12,7 @@ write something for java
 <li>Parish</li>
 </ol>
 
-![image](https://github.com/grooveguang/MyDocumentForJava/blob/master/img/2%20(1).jpg)
+![image](https://github.com/grooveguang/MyDocumentForJava/blob/master/img/2%20(8).jpg)
 
 
 你好 this is Windows！！
