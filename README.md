@@ -9,4 +9,7 @@ write something for java
 
 你好 this is Windows！！
 
+this is github !!
+
 hello Windows coming back ！！
+
