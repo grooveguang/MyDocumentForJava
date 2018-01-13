@@ -1,0 +1,48 @@
+1����ʱ�޸ģ�
+1.1���޸�IP��ַ
+# ifconfig eth0 192.168.100.100
+
+1.2���޸����ص�ַ
+# route add default gw 192.168.100.1 dev eth0
+
+1.3���޸�DNS
+# echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+
+2���������޸ģ�
+2.1���޸�IP��ַ
+�޸�/etc/sysconfig/network-scripts/ifcfg-eth0�ļ�������ж������������޸���Ӧ������
+# vi /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE=eth0                              #������Ӧ���豸����
+BOOTPROTO=static                    #�������ip��ַ�ķ�ʽ��Ĭ��Ϊdhcp����ʾ�Զ���ȡ��
+HWADDR=00:07:E9:05:E8:B4    #����MAC��ַ�������ַ��
+IPADDR=192.168.100.100          #IP��ַ
+NETMASK=255.255.255.0          #�������� 
+ONBOOT=yes                              #ϵͳ��ʱ�Ƿ񼤻���豸
+
+
+2.2���޸����ص�ַ
+�޸�/etc/sysconfig/network�ļ�
+# vi /etc/sysconfig/network
+NETWORKING=yes                #��ʾϵͳ�Ƿ�ʹ�����磬no��ʾ����ʹ������
+HOSTNAME=doiido                #���ñ�������������Ҫ��/etc/hosts�����õ���������ͬ
+GATEWAY=192.168.100.1      #�������ص�IP��ַ
+
+���ʱ���Ѿ�����pingͨIP��ַ�����ǻ��޷�pingͨ�����������Ҫ�޸�DNS
+
+2.3���޸�DNS
+�޸�/etc/resolv.conf�ļ�
+# vi /etc/resolv.conf
+nameserver 8.8.8.8                      #google����������
+nameserver 114.144.114.114      #��������������
+
+2.4����������
+# service network restart
+���ڹرսӿ� eth0�� [ȷ��]
+�رջ��ؽӿڣ� [ȷ��]
+�������ؽӿڣ� [ȷ��]
+�������� eth0�� [ȷ��]
+
+���ʱ��ϵͳ�Ϳ���������������
+
+#ע����ʵ���ص�ַ��DNSҲ�ǿ���д��ifcfg-eth0�У�����Ϊ�˹淶����������Ƿֿ�д
