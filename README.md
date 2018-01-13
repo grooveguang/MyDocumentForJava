@@ -5,3 +5,6 @@ write something for java
 阿发
  
 ![image](https://github.com/grooveguang/MyDocumentForJava/blob/master/img/2%20(1).jpg)
+
+
+你好 this is Windows！！
