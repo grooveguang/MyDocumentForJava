@@ -1,12 +1,10 @@
 # MyDocumentForJava
 write something for java 
-## 啊啊啊 
-<br />
-
-[20180113来到这里](https://github.com/grooveguang/MyDocumentForJava/blob/master/20180113%E6%9D%A5%E5%88%B0%E8%BF%99%E9%87%8C.md)
+## 目录
 <br/>
-## 阿发
- <ol>
+### 01_Redis
+#### [0101_redis介绍](https://github.com/grooveguang/MyDocumentForJava/blob/master/20180113%E6%9D%A5%E5%88%B0%E8%BF%99%E9%87%8C.md)
+<ol>
 <li>Bird</li>
 <li>McHale</li>
 <li>Parish</li>
