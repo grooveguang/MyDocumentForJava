@@ -1,7 +1,7 @@
 # MyDocumentForJava
 write something for java 
 <br>
-                             <span style="text-align: center;display:block;">   by `groovyguang` </span>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   by `groovyguang`
 
 ## 目录
 
