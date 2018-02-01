@@ -1,6 +1,8 @@
 # MyDocumentForJava
 write something for java 
-                                                                      by 'groovyguang'
+<br>
+                                by `groovyguang` 
+
 ## 目录
 
 ### [01_Redis](./main/01_Redis/RedisDirectory.md)
