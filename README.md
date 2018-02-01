@@ -2,7 +2,7 @@
 write something for java 
 ## 目录
 
-### [01_Redis](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/01_Redis/RedisDirectory.md)
+### [01_Redis](./main/01_Redis/RedisDirectory.md)
 
 ### [02_Linux](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/02_Linux/LinuxDirectory.md)
 
