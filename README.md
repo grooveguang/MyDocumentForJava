@@ -4,18 +4,18 @@ write something for java
 
 ### [01_Redis](./main/01_Redis/RedisDirectory.md)
 
-### [02_Linux](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/02_Linux/LinuxDirectory.md)
+### [02_Linux](./main/02_Linux/LinuxDirectory.md)
 
-### [03_MySql](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/03_MySql/MySqlDirectory.md)
+### [03_MySql](./main/03_MySql/MySqlDirectory.md)
 
-### [04_Nginx](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/04_Nginx/NginxDirectory.md)
+### [04_Nginx](./main/04_Nginx/NginxDirectory.md)
 
-### [05_Spring](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/05_Spring/SpringDirectory.md)
+### [05_Spring](./main/05_Spring/SpringDirectory.md)
 
-### [06_JVM](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/06_JVM/JVMDirectory.md)
+### [06_JVM](./main/06_JVM/JVMDirectory.md)
 
-### [07_JavaSE](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/07_JavaSE/JavaSEDirectory.md)
+### [07_JavaSE](./main/07_JavaSE/JavaSEDirectory.md)
 
-### [08_SpringBoot](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/08_SpringBoot/SpringBootDirectory.md)
+### [08_SpringBoot](./main/08_SpringBoot/SpringBootDirectory.md)
 
-### [09_Utils](https://github.com/grooveguang/MyDocumentForJava/blob/master/main/09_Utils/UtilsDirectory.md)
+### [09_Utils](./main/09_Utils/UtilsDirectory.md)
