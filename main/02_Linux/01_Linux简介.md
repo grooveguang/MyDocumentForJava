@@ -1,7 +1,7 @@
 Linux
 =======
 by `groovyguang`
-## 
+#### [返回linux目录](./LinuxDirectory.md) 
 
 ## 一切皆文件
 
@@ -82,3 +82,7 @@ by `groovyguang`
 | /要查找的词 | n 查找下一个，N 往上查找 |
 |  | N 查找下一个，n 往上查找 |
 | :set nu / :set nonu | 显示行号 /关闭行号 |
+
+
+
+|`[回到顶部](#readme)`|[回到顶部](#readme)|
