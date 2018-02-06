@@ -85,4 +85,4 @@ by `groovyguang`
 
 
 
-|`[回到顶部](#readme)`|[回到顶部](#readme)|
+[回到顶部](#readme)
