@@ -1,5 +1,7 @@
 vi/vim
 ======
+by `groovyguang`
+#### [返回linux目录](./LinuxDirectory.md) 
 
 ## vi/vim使用键盘图
 
