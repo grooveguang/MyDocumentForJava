@@ -1,7 +1,7 @@
 Redis 安装
 ====
 ##
-### [返回Redis目录](./RedisDirectory.md)
+### [返回Redis目录](./RedisDirectory.md) [回到首页目录](/README.md)
 
 ### 安装步骤
 1、下载获得Redis-3.2.5.tar.gz后将它放入我们的Linux目录/opt <br>
