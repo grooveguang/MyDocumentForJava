@@ -1,7 +1,7 @@
 Redis Commend
 ====
 ##
-### [返回Redis目录](./RedisDirectory.md)
+### [返回Redis目录](./RedisDirectory.md) [回到首页目录](/README.md)
 
 ## 通用命令
 

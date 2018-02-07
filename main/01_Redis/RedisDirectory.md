@@ -9,3 +9,5 @@
 ### [_02_ _InstallRedis](./02_installRedis.md)
 
 ### [_03_ _RedisCommend](./03_RedisCommend.md)
+
+### [_04_ _RedisConf](./04_RedisConf.md)
