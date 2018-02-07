@@ -5,12 +5,12 @@ Redis Commend
 
 ## 通用命令
 
-keys *
+    keys *
 
 •  查询当前库的所有键
 
 
-	exists <key>
+    exists <key>
 
 
 •  判断某个键是否存在
