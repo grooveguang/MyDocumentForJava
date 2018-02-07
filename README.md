@@ -24,5 +24,9 @@ by `groovyguang`
 
 ### [09_Utils](./main/09_Utils/UtilsDirectory.md)
 
+### [10_ElasticSearch](./main/10_ElasticSearch/ElasticSearchDirectory.md)
+
+### [11_Lua](./main/11_Lua/LuaDirectory.md)
+
  
 
