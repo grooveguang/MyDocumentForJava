@@ -4,7 +4,6 @@
 <br />
 
 ```java
-
 @Component 
 public class AutoLoginUtil { 
     @Autowired 
@@ -22,8 +21,6 @@ public class AutoLoginUtil {
         autoLoginUtil.userService.queryUserAutoLogin(); 
      } 
     } 
-
-<br/>
 ```
 IUserService userService是spring注入的方法。 
 主要是init()和@PostConstruct注解。
