@@ -19,6 +19,7 @@ Redis 安装
                         rpm -ivh ppl-0.10.2-11.el6.x86_64.rpm
                         rpm -ivh cloog-ppl-0.15.7-1.2.el6.x86_64.rpm
                         rpm -ivh gcc-4.4.7-17.el6.x86_64.rpm
+                        
 5、在redis-3.2.5目录下再次执行make命令
 
      Jemalloc/jemalloc.h：没有那个文件
@@ -27,9 +28,11 @@ Redis 安装
 6、在redis-3.2.5目录下再次执行make命令
   
 ![](./img/makeTest.png)
+
 7、执行完make后，跳过Redis test 继续执行make install
    
 ![](./img/makeInstall.png)
+
 查看默认安装目录：usr/local/bin
 
      Redis-benchmark:性能测试工具，可以在自己本子运行，看看自己本子性
@@ -51,6 +54,7 @@ Redis 安装
 4 、用客户端访问: Redis-cli
 
  ![](./img/redis-cli.png)      
+ 
    多个端口可以 Redis-cli –p 6379
 
 5 、测试验证： ping
@@ -62,9 +66,11 @@ Redis 安装
 单实例关闭：Redis-cli shutdown    
 
 ![](./img/redis-cli-shutdown.png)
+
 也可以进入终端后再关闭
    
 ![](./img/shutdown.png)
+
 多实例关闭，指定端口关闭 :Redis-cli -p 6379 shutdown
 
 Redis相关知识
