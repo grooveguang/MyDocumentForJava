@@ -3,8 +3,10 @@
 那如何调用spring注入的方法呢？ 
 <br />
 
-    @Component 
-    public class AutoLoginUtil { 
+```java
+
+@Component 
+public class AutoLoginUtil { 
     @Autowired 
     private IUserService userService; 
 
@@ -22,5 +24,6 @@
     } 
 
 <br/>
+```
 IUserService userService是spring注入的方法。 
 主要是init()和@PostConstruct注解。
