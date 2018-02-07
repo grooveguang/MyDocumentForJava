@@ -15,11 +15,11 @@ exists <key>
 
 •  判断某个键是否存在
 
-type <key>
+    type <key>
 
 •  查看键的类型
 
-del <key>
+    del <key>
 
 •  删除某个键
 
