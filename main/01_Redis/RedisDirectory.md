@@ -13,3 +13,7 @@
 ### [_04_ _RedisConf](./04_RedisConf.md)
 
 ### [_05_ _RedisTransaction](./05_RedisTransaction.md)
+
+### [_06_ _RedisPersistence](./06_RedisPersistence.md)
+
+### [_07_ _RedisCluster](./07_RedisCluster.md)
