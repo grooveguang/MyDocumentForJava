@@ -15,7 +15,7 @@ by `groovyguang`
 
 |  | ps -Lp 进程号 cu | 查看某个进程的cpu消耗排序 |  |
 
-|  | cat /proc/cpuinfo |grep ‘processor’|wc -l | 查看cpu核数 |  |
+|  | ```cat /proc/cpuinfo |grep ‘processor’|wc -l``` | 查看cpu核数 |  |
 
 |  |  |  |  |
 
