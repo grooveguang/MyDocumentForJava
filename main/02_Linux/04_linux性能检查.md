@@ -17,18 +17,4 @@ by `groovyguang`
 
 |  | ```cat /proc/cpuinfo |grep ‘processor’|wc -l``` | 查看cpu核数 |  |
 
-|  |  |  |  |
 
-|  |  |  |  |
-
-|  |  |  |  |
-
-|  |  |  |  |
-
-|  |  |  |  |
-
-|  |  |  |  |
-
-|  |  |  |  |
-
-|  |  |  |  |
