@@ -10,6 +10,6 @@ by `groovyguang`
 |  | sar -r 3 | 和free命令类似，查看内存的使用情况，但是不包含swap的情况 |  |
 | cpu瓶颈 | top -H | 按照cpu消耗高低进行排序 |  |
 |  | ps -Lp 进程号 cu | 查看某个进程的cpu消耗排序 |  |
-|  | ```cat /proc/cpuinfo |grep ‘processor’|wc -l``` | 查看cpu核数 |  |
+|  | (cat /proc/cpuinfo |grep ‘processor’|wc -l) | 查看cpu核数 |  |
 
 
