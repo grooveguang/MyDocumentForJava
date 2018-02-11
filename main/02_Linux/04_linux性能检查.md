@@ -14,8 +14,7 @@ by `groovyguang`
 |  | ps -Lp 进程号 cu | 查看某个进程的cpu消耗排序 |  |
 |  | (cat /proc/cpuinfo 管道grep ‘processor’管道wc -l) | 查看cpu核数 |  |
 |   | top | 查看cpu总体消耗，包括分项消耗如user,system,idle,nice等消耗 |  |
-|   | top 然后shift+h:显示java线程，然后shift+M:按照内存使用进行排序；shift+P:按照cpu时间排序;shift+T:按照cpu累计使用时间排序
-多核cpu，按“1”进入top视图 |  |  |
+|   | top 然后shift+h:显示java线程，然后shift+M:按照内存使用进行排序；shift+P:按照cpu时间排序;shift+T:按照cpu累计使用时间排序多核cpu，按“1”进入top视图 |  |  |
 |  | sar -u 3(间隔时间) | 查看cpu总体消耗占比	 |  |
 |  | sar -q | 查看cpu load |  |
 |  | top -b -n 1 管道 awk ‘{if (NR<=7)print;else if($8==”D”){print;count++}}END{print “Total status D:”count}’ | 计算在cpu load里面的uninterruptedsleep的任务数量 | uninterruptedsleep的任务会被计入cpu load，如磁盘堵塞 |
