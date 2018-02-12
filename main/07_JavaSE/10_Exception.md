@@ -35,6 +35,7 @@ Exception
 
 一、语法
 
+```java
 	try{
 		//①
 		//有可能出现异常的代码块
@@ -47,7 +48,7 @@ Exception
 		//③
 		
 	}
-
+```
 
 二、执行顺序
 
@@ -76,7 +77,7 @@ Exception
 
 案例：
 ```java
-			public static int method(){
+		public static int method(){
 			try{
 				String[] names=new String[3];
 	
@@ -123,7 +124,8 @@ Exception
 
 示例：
 
-		class Father{
+```java
+	class Father{
 		
 		public void show() throws RuntimeException{
 			
@@ -136,7 +138,7 @@ Exception
 			
 		}
 	}
-
+```
 
 
 ## 异常的体会

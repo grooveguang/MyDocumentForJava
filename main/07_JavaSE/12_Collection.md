@@ -73,6 +73,7 @@ Collection
 
 方式一：
 
+```java
 		//①获取迭代器
 		Iterator iter = col.iterator();
 		//②循环迭代
@@ -81,14 +82,15 @@ Collection
 			System.out.println(next);//处理该元素
 			
 		}
+```
 
 方式二：使用增强for
 
+```java
 		for(Object obj: col){
 			System.out.println(obj);
 		}
-	
-
+```
 
 ## List接口
 
@@ -115,27 +117,32 @@ Collection
 
 //方式一：使用Iterator
 
+```java
 		Iterator iterator = list.iterator();
 		while(iterator.hasNext()){
 			System.out.println(iterator.next());
 		}
 		
 		System.out.println("----------------------");
-		
+```
+
 //方式二：使用增强for
 
+```java
 		for (Object object : list) {
 			System.out.println(object);
 			
 		}
 		System.out.println("----------------------");
+```
 
 //方式三：使用普通for循环
 
+```java
 		for(int i=0;i<list.size();i++){
 			System.out.println(list.get(i));
 		}
-
+```
 
 ## List接口的实现类
 
@@ -166,6 +173,7 @@ Collection
 
 
 共同点
+
 				实现的接口		常见的方法		特点
 	
 	ArrayList	List			增删改查			允许重复，支持索引，有序
@@ -266,6 +274,7 @@ Collection
 ### Properties
 
 一、特点
+
 	1、Properties属于java.util包下的一个集合类，继承自Hashtable，具备Hashtable的一系列特点，比如键无序、键不能重复，值可以重复
 	2、Properties主要用于读取和写入配置文件的 ★
 	3、配置文件的格式要求如下：
@@ -355,12 +364,14 @@ Collection
 
 语法：
 
+```java
 	class MyGeneric<T>{
 		//普通类中能写的基本上都能写
 		T t;
 		public void set(T t){}
 
 	}
+```
 
 什么时候确定泛型类的类型？
 
@@ -377,27 +388,31 @@ Collection
 
 语法：
 
+```java
 	interface MyGeneric<T>{
 		void setT(T t);
 		T get();
-
 	}
+```
 
 什么时候确定泛型接口的类型？
 
 	接口被扩展时！
 
+```java
 	class A implements MyGeneric<String>{}
 	interface I extends MyGeneric<Integer>{}
-
+```
 
 三、自定义泛型方法
 
 语法：
 
+```java
 	修饰符<T> 返回类型 方法名（T t）{
 
 	}
+```
 
 什么时候确定泛型方法的类型？
 

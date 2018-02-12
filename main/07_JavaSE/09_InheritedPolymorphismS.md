@@ -66,19 +66,29 @@ Inherited Polymorphism High
 	    抽象类实现接口，可以不用实现里面所有的抽象方法
 	  3.一个类可以实现多个接口，接口间用逗号隔开
 	  语法：
+
+```java
 	  class A implements 接口1，接口2{
 	 
 	  }
+```
+
 	  4.一个类可以既继承，又实现接口
 	  语法：
+
+```java
 	  class A extends 类B implements  接口1，接口2{
 	  	
 	  }
+```
 	  
 	  5.接口可以继承其他接口，而且支持多继承
 	  语法：
+
+```java
 	  interface A extends 接口1，接口2{
 	  }
+```
 	  
 	  总结：
 	  ①接口支持多继承，多实现
@@ -144,16 +154,16 @@ Inherited Polymorphism High
 	在里面的类称为内部类
 	里面嵌套别的类的类称为外部类
 	
-	
+```java
 	class A{//外部类
 		class B{//内部类
 	
 		}
-	
 	}
 	class C{//外部其他类
 	
 	}
+```
 
 ### 内部类的好处
 
@@ -292,8 +302,8 @@ Inherited Polymorphism High
 
 示例：
 
+```java
 	//有参构造
-
 	class Season{
 		private String name;//季节名
 		private String description;//季节描述
@@ -314,17 +324,22 @@ Inherited Polymorphism High
 			return description;
 		}
 	}
+```
 
 ### 使用enum关键字定义枚举 ★
 
 	jdk5.0出现的新特性。
 	  1.语法
+
+```java
 	  enum 类名{
 	  		对象(参数列表)，对象(参数列表);
 	  		private 类名(参数列表){
 	  		}
 	  		....
 	  }
+```
+
 	  ① 对象必须放在第一行
 	  ② 对象默认修饰符就是 public static final 
 	  ③如果是无参构造器，则构造器、对象后的括号都可以省略
@@ -334,6 +349,7 @@ Inherited Polymorphism High
 
 示例：
 
+```java
 	enum Season2{
 		//②本类创建一组对象
 		 SPRING ("春天","万物复苏"),
@@ -355,6 +371,7 @@ Inherited Polymorphism High
 			return description;
 		}
 	}
+```
 
 ### 枚举的常见方法 √
 
@@ -376,6 +393,7 @@ Inherited Polymorphism High
 
 	注解又称为 元数据，代表了对数据加以描述的文字
 	注解 可以用于修饰：类、方法、属性、构造、包、局部变量
+
 注解的好处：
 
 	和注释类似，对数据加以解释说明，但和注释不一样的是，可以被编译、被运行，赋予了其他的意义
@@ -391,10 +409,13 @@ Inherited Polymorphism High
 
 一、定义的语法
 
+```java
 	@interface 注解名{
 
 		类型 方法名() [default 值];
 	}
+```
+
 	注意：
 	1、类型 只能是 八大基本数据类型、String、枚举、Class以及上述类型 的数组
 	2、方法名建议使用value，因为使用时可以省略

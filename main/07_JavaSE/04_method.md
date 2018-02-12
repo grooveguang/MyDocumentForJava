@@ -46,14 +46,17 @@ java中，往往将实现一个特定的功能的步骤 ，封装起来。对外
 
 1、将具体实现细节隐藏了，只对外暴露方法名，对于开发人员，调用比较方便
 
-
+```java
 System.out.println("sdfgh");
+```
 
 2、提高代码的重用性和维护性
 
 案例：
 
+```java
 int[] arr={1,2,3,4};
+```
 
 //添加某个元素
 
@@ -71,26 +74,25 @@ int[] arr={1,2,3,4};
 //打印该数组
 方法名();
 
-
+```java
 	方法名（）{
 		for(){
 	
 		}
-	
-	
 	}
-
+```
 
 ## 方法的声明
 
 注意：方法必须定义在类中，方法属于类的一种成员
 
+```java
 	class A{
 		public static void main(String[] args){
 	
 		}
 	}
-
+```
 
 ### 语法
 
@@ -146,6 +148,7 @@ int[] arr={1,2,3,4};
 
 	如 :
 
+```java
 	public static void method(int[] arr){
 
 	}
@@ -153,6 +156,7 @@ int[] arr={1,2,3,4};
 	public static void method(int a,int b,String s){
 
 	}
+```
 
 	4、方法声明时的参数，称为形参，方法调用时的参数，称为实参
 	形参的类型、个数要与实参的类型、个数一一对应
@@ -170,49 +174,59 @@ int[] arr={1,2,3,4};
 
 
 	错误！！！！
+
+```java
 	public static void method(int[] arr){
 		public static void method1(int[] arr){
 
 		}
 
 	}
+```
 
 	正确！！！！
+
+```java
 	public static void method(int[] arr){
 		method1();
 
 	}
-
+```
 
 
 ### 方法声明归结成以下四种情况
 
 一、无返回无参
 
+```java
 	public static void method(){
 
 	}
-
+```
 
 二、有返回无参
 
+```java
 	public static 返回类型 method(){
 		return 值;
 	}
+```
 
 三、无返回有参
 
+```java
 	public static void method(类型 名，类型 名){
 
 	}
+```
 
 四、有返回有参 
 
+```java
 	public static 返回类型 method(类型名，类型 名){
 
-
 	}
-
+```
 
 案例：计算类，实现 加、减、乘、除四个功能
 
@@ -223,24 +237,28 @@ int[] arr={1,2,3,4};
 
 案例2：判断 一个数是否为素数
 
-
+```java
 	public static boolean isSu(int num){
 
 	}
+```
 
 案例3：求数组的和
 
+```java
 	public static int sum(int[] arr){
 
 	}
+```
 
 案例4：打印数组的各元素
 
+```java
 	public static void print(int[] arr){
 
 
 	}
-
+```
 	
 	
 ## 方法的调用

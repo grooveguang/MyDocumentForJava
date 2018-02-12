@@ -42,6 +42,8 @@ java中：
 	李四:定义方法
 
 	没有用反射--------
+
+```java
 	public void method(Fly fly){
 		if(fly instanceof 类A){
 
@@ -57,21 +59,18 @@ java中：
 			....
 		}
 	}
+```
 
 	用到反射-----------------
-	public void method(Fly fly){
+	
+```java
+    public void method(Fly fly){
 
 		Class clazz=fly.getClass();
 
 		Object obj = clazz.newInstance();
-		
-		
-
-
 	}
-
-
-
+```
 
 如果没有有用反射：
 
@@ -89,12 +88,12 @@ java中：
 1、自定义一个Student类，是不是一个对象？
 
 	答：是
-	
+
+```java
 	class Student{
 	
-	
 	}
-
+```
 
 
 2、Student类属于谁的对象?
@@ -102,6 +101,7 @@ java中：
 	答：Class
 	There is a class named Class;
 
+```java
 class Animal{
 
 }
@@ -109,14 +109,14 @@ class Animal{
 class Car{
 
 }
-
+```
 
 都有类名
 都有属性
 都有方法
 都有构造
 
-
+```java
 class MyClass{
 
 	public String getName(){}//获取类名
@@ -128,7 +128,7 @@ class MyClass{
 
 MyClass c = new MyClass();
 c.getName()
-	
+```	
 
 3、如何创建Class类型的对象？
 
@@ -169,6 +169,7 @@ c.getName()
 
 ### 打印某个类的所有方法
 
+```java
 	public static void printMethods(String className) throws ClassNotFoundException{
 		Class clazz=Class.forName(className);
 		
@@ -207,9 +208,11 @@ c.getName()
 			System.out.println(modifier+"\t"+typeName+"\t"+name+"("+builder+")");
 		}
 	}
+```
 	
 ### 打印某个类的所有属性
 
+```java
 	public static void printFields(String className) throws ClassNotFoundException{
 		Class clazz = Class.forName(className);
 		
@@ -236,8 +239,10 @@ c.getName()
 		}
 		
 	}
+```
 
 ### 打印某个类的所有构造
+
 ```java
 	public static void printConstructors(String className) throws ClassNotFoundException{
 		Class clazz=Class.forName(className);
@@ -275,6 +280,7 @@ c.getName()
 
 ## 通过反射访问成员变量
 
+```java
 	//1.获取指定类的 类类型
 		
 		Class c = Person.class;
@@ -315,9 +321,11 @@ c.getName()
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+```
 
 ## 通过反射访问方法
 
+```java
 	//1.获取某个指定类的类类型
 		
 		Class c = Person.class;
@@ -345,9 +353,11 @@ c.getName()
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+```
 
 ## 通过反射访问静态方法
 
+```java
 	//1.获取某个指定类的类类型
 		
 		Class c = Person.class;
@@ -362,5 +372,6 @@ c.getName()
 		//3.调用方法
 		
 		method.invoke(null);
+```
 
 [回到顶部](#readme)

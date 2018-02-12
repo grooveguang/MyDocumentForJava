@@ -201,6 +201,7 @@ final修饰方法，代表该方法不能被重写，可以被继承
 
 	1、饿汉式
 
+```java
 	class Single{
 		private static Single s = new Single();
 		private Single(){
@@ -213,10 +214,11 @@ final修饰方法，代表该方法不能被重写，可以被继承
 		}
 
 	}
-
+```
 
 	2、懒汉式
 
+```java
 	class Single{
 		private static Single s;
 		private Single(){
@@ -230,6 +232,7 @@ final修饰方法，代表该方法不能被重写，可以被继承
 		}
 
 	}
+```
 
 	二者的区别：创建的对象的时机不同，饿汉式创建较早！！！
 

@@ -90,10 +90,14 @@ Multi Threading
 	1、循环的条件使用一个boolean变量loop
 	2、loop默认值为true
 	3、添加一个公共的更新loop的方法
+
+```java
 	public void setLoop(boolean loop){
 
 		this.loop=loop;
 	}
+```
+
 	4、需要停止线程时，调用setLoop方法，传入false即可
 
 

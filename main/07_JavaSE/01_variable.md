@@ -376,6 +376,8 @@ char
 
 
 	案例：
+```java
+
 	int i=10;int j=99;
 	if(i<=10 |(++j)==100){
 
@@ -387,7 +389,7 @@ char
 	}
 	System.out.println(j);//100
 	
-
+```
 
 	
 	
@@ -398,9 +400,11 @@ char
 	特点：
 	1.执行效果： 先判断表达式1的值，如果为true，最终结果为表达式2的值，反之为表达式3的值
 
+```java
 	int a=100;
 	int b=8;
 	int c = a>b?100:9;
+```
 
 	2、表达式1 的最终类型为boolean类型，所以表达式1可以用关系表达式或逻辑表达式或boolean变量充当
 
@@ -418,22 +422,28 @@ char
 
 	位置：在class的上面导入
 	语法：
-	
-	import java.util.Scanner;或import java.util.*;
+
+```java	
+	import java.util.Scanner;
+    或import java.util.*;
+```
 
 步骤2：创建Scanner的变量
 
 	位置：在main方法中
-	Scanner input  = new Scanner(System.in);
 
+```java
+	Scanner input  = new Scanner(System.in);
+```
 
 步骤3：调用输入功能
 
+```java
 	String name = input.next();//输入字符串
 	int age = input.nextInt();//输入整型
 	double score = input.nextDouble();//输入浮点型
 	char sex= input.next().charAt(0);//输入char型
-
+```
 
 注意：输入上面都搭配输出语句，提高用户的体验
 

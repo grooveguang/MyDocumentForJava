@@ -165,6 +165,7 @@ Object-Oriented
 
 	注意：一般不用加static
 
+```java
 	class Animal{
 	
 		//属性
@@ -192,7 +193,7 @@ Object-Oriented
 		}
 	
 	}
-
+```
 
 ### 创建对象
 

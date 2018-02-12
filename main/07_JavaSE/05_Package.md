@@ -186,8 +186,8 @@ Package
 	
 	2、提供公共的方法，允许其他类访问
 	
-	set方法，为了让其他类 对属性赋值
-	
+```java
+	//set方法，为了让其他类 对属性赋值
 		public void setAge(int a){
 			if(){
 	
@@ -196,12 +196,12 @@ Package
 			}
 		}
 	
-	get方法，为了让其他类 访问该属性
+	//get方法，为了让其他类 访问该属性
 	
 		public int getAge(){
 			return age;
 		}
-
+```
 
 注意：
 

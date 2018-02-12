@@ -27,11 +27,13 @@ Process Control Structure
 特点：
 
 	1、条件 的结果必须为boolean类型，一般关系表达式或逻辑表达式或boolean变量
+
+```java
 	boolean b=false;
 	int i=10;
 	if(i=9){//×
-
 	}
+```
 
 	2、语句 可以为任意逻辑语句，如输入、输出、变量、运算
 	3、大括号可以省略，默认执行第一句
@@ -43,10 +45,11 @@ Process Control Structure
 
 一、语法
 
+```java
 	if(条件){
 		语句
 	}
-
+```
 
 二、执行顺序
 
@@ -57,13 +60,13 @@ Process Control Structure
 
 一、语法
 
+```java
 	if(条件){
 		语句1
 	}else{
 		语句2
-
 	}
-
+```
 
 二、执行顺序
 
@@ -74,6 +77,7 @@ Process Control Structure
 
 一、语法
 
+```java
 	if(条件1){
 		语句1
 	}else if(条件2){
@@ -84,6 +88,7 @@ Process Control Structure
 	else{
 		语句n
 	}
+```
 
 二、执行顺序
 
@@ -108,6 +113,7 @@ Process Control Structure
 
 一、语法
 
+```java
 	switch(变量或表达式){
 		case 常量1：语句1；break;
 		case 常量2：语句2；break;
@@ -117,7 +123,7 @@ Process Control Structure
 
 
 	}
-
+```
 
 二、注意事项
 
@@ -132,9 +138,6 @@ Process Control Structure
 
 
 	如果都不匹配，则执行default后的语句，直到遇见break为止。
-
-	
-
 
 ## if和switch的对比
 
@@ -171,12 +174,16 @@ Process Control Structure
 
 一、语法
 	循环变量初始化
+
+```java
 	while(循环条件){
 		循环体
 		循环变量更新
 	}
+```
 
 二、循环结构四要素
+
 	循环变量初始化
 	循环条件
 	循环体
@@ -187,6 +194,7 @@ Process Control Structure
 	先判断循环条件是否成立，如果成立，进入循环体，然后继续判断循环条件是否成立，依次类推，直到循环条件不成立为止
 
 四、实现循环结构的步骤
+
 	1、先把while框架搭上
 	2、再找循环条件和循环操作
 	3、通过循环条件分析出需要定义什么循环变量
@@ -197,18 +205,21 @@ Process Control Structure
 情况一：知道循环次数
 
 题型：
+
 	带 1-100之间，多少遍的  字眼的题目
 
 实现步骤：
 
 	1、先将框架搭上
+
+```java
 	int i=初始值;
 	while(i<=次数){
 		//循环体
 
 		i++;
 	}
-
+```
 
 	2、分析循环操作，（重复的操作）
 
@@ -219,9 +230,13 @@ Process Control Structure
 情况二：不知道循环次数
 
 	1、先搭while循环的框架
+
+```java
 	while(){
 
 	}
+```
+
 	2、先找循环操作
 	3、通过循环操作分析循环条件
 	4、检查循环是否正常执行
@@ -235,12 +250,13 @@ Process Control Structure
 一、语法
 
 	循环变量初始化
-	do{
-	
+
+```java
+	do{	
 		循环体
 		循环变量更新
 	}while(循环条件);
-
+```
 
 二、执行顺序
 
@@ -285,10 +301,11 @@ Process Control Structure
 
 一、语法
 
+```java
 	for(循环变量初始化;循环条件;循环变量更新){
 		循环体
 	}
-
+```
 
 二、执行顺序
 		①				②		③
@@ -362,6 +379,7 @@ Process Control Structure
 
 总结：
 
+```java
 while（条件）{
 
 	操作
@@ -378,7 +396,7 @@ for(;;){
 
 
 }
-	
+```	
 	
 ## 跳转结构
 
@@ -399,6 +417,7 @@ for(;;){
 	
 一）、用在switch中
 
+```java
 	switch(){
 
 		case 1:
@@ -408,17 +427,19 @@ for(;;){
 			语句2；
 			break;
 	}
+```
 
 二）、用在循环中
 	说明：一般搭配if，放在循环体中
 
+```java
 	while(){
 		if(){
 		break;
 
+    	}
 	}
-	}
-
+```
 
 
 注意： 不能单独放在if中，外面没有循环和switch
@@ -429,26 +450,30 @@ for(;;){
 
 四、注意事项
 
-	1、while(){
+```java
+	while(){
 			switch(){
 				if(){
 				break;}
 			}
 
 		}
-	跳出switch
+	//跳出switch
 
-	2、while(){
+	while(){
 			for(){
 				break;
 			}
 
 		}
 
-	跳出for
+	//跳出for
+```
 
 	3、break 可以搭配标签，用于跳出外层循环，代码如下：
-	a:for(int i=1;i<=10;i++){
+	
+```java
+a:for(int i=1;i<=10;i++){
 
 
 			for(int j=1;j<=5;j++){
@@ -459,6 +484,7 @@ for(;;){
 				}
 
 			}
+```
 
 ### continue
 
@@ -466,7 +492,7 @@ for(;;){
 
 二、语法
 
-	
+```java
 	while(){
 		if(){
 
@@ -474,6 +500,7 @@ for(;;){
 
 		}
 	}
+```
 
 三、执行顺序
 
@@ -481,7 +508,8 @@ for(;;){
 
 四、注意
 
-	1.while(){
+```java
+	while(){
 		for(){
 			switch(){
 
@@ -491,13 +519,14 @@ for(;;){
 		}
 
 	}
-	
+```
 
 	continue作用于for
 
 
 	2.continue可以搭配标签作用于外层循环
 
+```java
 		a:for(int i=1;i<=10;i++){
 			for(int j=1;j<=5;j++){
 				if(j==2)
@@ -507,7 +536,7 @@ for(;;){
 			System.out.println("外层----------------------"+i);
 
 		}
-
+```
 	
 
 	

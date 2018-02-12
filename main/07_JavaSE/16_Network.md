@@ -338,15 +338,16 @@ uri>url
 
 ### 打印服务端某文本文件内容
 
-1.创建URL对象 ——相当于写上 网址
+```java
+//1.创建URL对象 ——相当于写上 网址
 		
 		URL  url= new URL("http://127.0.0.1:8080/StreamUtils.txt");
 		
-2.打开连接——相当于地址栏敲回车	
+//2.打开连接——相当于地址栏敲回车	
 		
 		URLConnection connection = url.openConnection();
 		
-3.获取连接中的流内容
+//3.获取连接中的流内容
 		
 		System.out.println(connection.getContentLength());
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date(connection.getLastModified())));
@@ -356,19 +357,20 @@ uri>url
 		InputStream inputStream = connection.getInputStream();
 		String content = StreamUtils.streamToString(inputStream);
 		System.out.println(content);
-
+```
 
 ### 下载服务端的图片文件
 
-1.创建URL对象 ——相当于写上 网址
+```java
+//1.创建URL对象 ——相当于写上 网址
 		
 		URL  url= new URL("http://127.0.0.1:8080/ae.jpg");
 		
-2.打开连接——相当于地址栏敲回车
+//2.打开连接——相当于地址栏敲回车
 
 		URLConnection connection = url.openConnection();
 		
-3.获取连接中的流内容
+//3.获取连接中的流内容
 		
 		InputStream inputStream = connection.getInputStream();//此流用于读取连接中的图片
 		
@@ -377,7 +379,7 @@ uri>url
 		 byte[] buf = StreamUtils.streamToByteArray(inputStream);
 			
 		 fos.write(buf);
-
+```
 
 [回到顶部](#readme)
 

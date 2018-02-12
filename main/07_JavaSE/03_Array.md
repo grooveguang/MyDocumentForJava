@@ -87,17 +87,22 @@ String null
 	类型[] 名 = new 类型[长度];
 
 步骤二：循环赋值
+
+```java
 	for(int i=0;i<名.length;i++){
 		名[i]=值;
 	
 	}
+```
+
 步骤三：使用
-	for(int i=0;i<名.length;i++){
+
+```java	
+for(int i=0;i<名.length;i++){
 		System.out.println(名[i]);
 	
 	}
-	
-
+```	
 
 ### 静态初始化
 适用于：不知道值的规律，但声明时知道要赋的值
@@ -111,14 +116,18 @@ String null
 
 
 步骤二：使用
+
+```java
 	for(int i=0;i<名.length;i++){
 		System.out.println(名[i]);
 	
 	}
+```
 
 ## 数组的简单使用
 ### 求和
 
+```java
 	int sum =0;//保存和
 		
 		for(int i=0;i<arr.length;i++){
@@ -126,8 +135,11 @@ String null
 		}
 		System.out.println(sum);
 
+```
+
 ### 求最值
 
+```java
 	int max = arr[0];//创建一个擂台，假设第一个数最大
 		
 
@@ -137,9 +149,11 @@ String null
 
 		}
 		System.out.println(max);
+```
 
 ### 查找
 
+```java
 		System.out.print("请输入要查找的元素：");
 		int search = input.nextInt();//2
 
@@ -158,9 +172,11 @@ String null
 
 			System.out.println("找到了");
 		}
+```
 
 ### 排序
 
+```java
 	for(int i=0;i<arr.length-1;i++){//i代表轮数
 			//每一轮做的事情：重复比较多次，将较大的交换到后面
 			/*arr[0] vs arr[1]  √
@@ -177,9 +193,7 @@ String null
 				}
 			}
 		}
-
-
-
+```
 
 ## 数组的复杂使用
 
@@ -201,14 +215,17 @@ String null
 
 	语法：
 	采用循环赋值
-			//1.为array2开辟空间
+	
+```java
+		//1.为array2开辟空间
 			array2 = new int[array1.length];
 			//2.循环赋值
 			for(int i=0;i<array2.length;i++){
 	
 				array2[i]=array1[i];//基本类型的赋值
 			}
-	
+```
+
 	特点：
 		遵循基本类型的赋值特点，赋的是元素内容，其中一个更改不影响另外一个
 
@@ -232,6 +249,7 @@ String null
 	arr[arr.length/2-1]
 	//代码如下：
 
+```java
 	for(int i=0;i<arr.length/2;i++){//i代表的是要交互的左边元素的下标
 			//arr[i] vs arr[arr.length-1-i]
 
@@ -240,6 +258,7 @@ String null
 			arr[arr.length-1-i]=t;
 
 		}
+```
 
 反转方式二：
 
@@ -249,6 +268,7 @@ String null
 
 	//代码如下：
 
+```java
 	//1.创建新数组，长度=arr.length
 		int[] newArr = new int[arr.length];
 
@@ -259,6 +279,7 @@ String null
 		}
 		//3.数组的赋值
 		arr = newArr;
+```
 
 ## 二维数组
 
@@ -288,47 +309,49 @@ String null
 步骤3：赋值
 	情况一：固定列数
 
+```java
 	for(int i=0;i<名.length;i++){
 		for(int j=0;j<名[i].length;j++){
 			名[i][j]=值;
 		}
 	}
-
+```
 
 	情况二：不固定列数
 
+```java
 	for(int i=0;i<名.length;i++){
 		名[i]=new int[列数];//★
 		for(int j=0;j<名[i].length;j++){
 			名[i][j]=值;
 		}
-	
-
 	}
+```
 
 步骤4：使用
 
+```java
 	for(int i=0;i<名.length;i++){
 		for(int j=0;j<名[i].length;j++){
 			System.out.print(名[i][j]);
 		}
-	
-
 	}
-
+```
 	
 
 ### 静态初始化
 
 步骤1：声明并初始化
 
+```java
 		int[][] arr= new int[][]{{1 ,3 ,5},{6,7,8,9},{1,2}};
 		//或
 		//int[][] arr2 = {{1 ,3 ,5},{6,7,8,9},{1,2}};
+```
 
 步骤2：使用
 
-
+```java
 		for(int i=0;i<arr.length;i++){
 			
 			
@@ -340,5 +363,6 @@ String null
 			System.out.println();
 
 		}
+```
 
 [回到顶部](#readme)

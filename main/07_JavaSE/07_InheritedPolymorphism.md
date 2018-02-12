@@ -39,10 +39,12 @@ java中的继承：
 
 	定义类，通过extends关键字继承其他类
 	示例：
+
+```java
 	class Cat extends Animal{
 	
-	
 	}
+```
 	
 	子类：Cat
 	父类：Animal
@@ -92,7 +94,7 @@ ctrl+T 查看类的层级关系
 	
 	④ 调用父类的构造器不仅仅限于上一级，将一直追溯到Object类
 
-
+```java
 	class A{
 		public A(){
 			System.out.println("我是A");
@@ -112,7 +114,7 @@ ctrl+T 查看类的层级关系
 	
 	
 	C c = new C();
-
+```
 
 
 ### super关键字 ★
@@ -254,11 +256,12 @@ ctrl+T 查看类的层级关系
 
 	只有具备继承关系的两个类才能转换，将引用类型之间的转换称为  “造型”
 
-	向上转型：
+```java
+	//向上转型：
 		Person  p = new Student();
 	
 
-	向下转型：
+	//向下转型：
 		Student s = (Student)p;
 
 
@@ -268,7 +271,7 @@ ctrl+T 查看类的层级关系
 	class Student extends Person{
 	
 	}
-	
+```
 
 
 ### 多态使用的总结
@@ -361,22 +364,28 @@ instanceof：
 
 	举例： 
 
+```java
 	int a=10;
 	int b=10;
 	System.out.println(a==b);//true
-    ② 如果判断引用类型，判断的是地址是否相等 
+```    
+   ② 如果判断引用类型，判断的是地址是否相等 
 
 	举例： 
+
+```java
 	Person p1 = new Person("张无忌"); 
 	Person p2 = new  Person("张无忌"); 
 	System.out.println(p1==p2);//false 
-  
+```  
   
 2、 equals 只能判断引用类型 判断的是地址是否相等
 
+```java
   			Person p1 = new Person("张无忌");
   			Person p2 = new Person("张无忌");
   			System.out.println(p1.equals(p2));//false
+```
   
  		开发中有的类需要判断两个对象的元素内容是否相等，需要重写equals方法
   			比如：String类重写了equals方法，所以判断的就是内容
@@ -402,9 +411,12 @@ instanceof：
 	3、往往需要重写toString，用于返回该对象的属性信息
 	4、如何重写toString方法
 
+```java
 	public String toString(){
 		return 属性值;
 	}
+```
+
 	5、好处：
 		打印时，自动调用对象的toString，不用手动调用
 		拼接字符串时，自动调用对象的toString，不用手动调用
