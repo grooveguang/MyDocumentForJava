@@ -139,6 +139,7 @@ String null
 		System.out.println(max);
 
 ### 查找
+
 		System.out.print("请输入要查找的元素：");
 		int search = input.nextInt();//2
 
@@ -340,4 +341,4 @@ String null
 
 		}
 
-
+[回到顶部](#readme)

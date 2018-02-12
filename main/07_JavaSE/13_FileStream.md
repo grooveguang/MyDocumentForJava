@@ -378,7 +378,7 @@ new FileInputStream(File file);//根据file对象创建一个输入流对象
 	   通过调用getFilePointer() 获取指针位置
 	  4、里面提供了一系列对简单类型的读写方法，默认读写时都向后移动指定类型的字节数
 
-
+[回到顶部](#readme)
 
 
 	
