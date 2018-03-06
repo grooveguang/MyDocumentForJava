@@ -9,7 +9,7 @@ Nginx Install
 
 ![](./img/worker.png)
 
-master-workers的机制的好处
+#### master-workers的机制的好处
 
 首先，对于每个worker进程来说，独立的进程，不需要加锁，所以省掉了锁带来的开销，同时在编程以及问题查找时，也会方便很多。
 
@@ -19,11 +19,11 @@ master-workers的机制的好处
 
 需要设置多少个worker
 
-  Nginx 同redis类似都采用了io多路复用机制，每个worker都是一个独立的进程，但每个进程里只有一个主线程，通过异步非阻塞的方式来处理请求， 即使是千上万个请求也不在话下。每个worker的线程可以把一个cpu的性能发挥到极致。
+Nginx 同redis类似都采用了io多路复用机制，每个worker都是一个独立的进程，但每个进程里只有一个主线程，通过异步非阻塞的方式来处理请求， 即使是千上万个请求也不在话下。每个worker的线程可以把一个cpu的性能发挥到极致。
   
 所以worker数和服务器的cpu数相等是最为适宜的。设少了会浪费cpu，设多了会造成cpu频繁切换上下文带来的损耗。
  
-### worker数量和CPU
+### worker数量和CPU配置
 		
         #设置worker数量。
 		worker_processes 4
@@ -32,9 +32,17 @@ master-workers的机制的好处
 	    # work绑定cpu (4 work绑定8cpu中的4个) 。
 		worker_cpu_affinity 0000001 00000010 00000100
 		00001000
+
 ### 连接数worker_connection
 
-    这个值是表示每个worker进程所能建立连接的最大值，所以，一个nginx能建立的最大连接数，应该是worker_connections * worker_processes。当然，这里说     的是最大连接数，对于HTTP请求本地资源来说，能够支持的最大并发数量是worker_connections * worker_processes，如果是支持http1.1的浏览器每次访问要     占两个连接，所以普通的静态访问最大并发数是： worker_connections * worker_processes /2，而如果是HTTP作为反向代理来说，最大并发数量应该是           worker_connections *worker_processes/4。因为作为反向代理服务器，每个并发会建立与客户端的连接和与后端服务的连接，会占用两个连接。
+    这个值是表示每个worker进程所能建立连接的最大值，所以，
+    一个nginx能建立的最大连接数，应该是worker_connections * worker_processes。
+    当然，这里说的是最大连接数，对于HTTP请求本地资源来说，
+    能够支持的最大并发数量是worker_connections * worker_processes，
+    如果是支持http1.1的浏览器每次访问要占两个连接，
+    所以普通的静态访问最大并发数是： worker_connections * worker_processes /2，
+    而如果是HTTP作为反向代理来说，最大并发数量应该是worker_connections * worker_processes/4。
+    因为作为反向代理服务器，每个并发会建立与客户端的连接和与后端服务的连接，会占用两个连接。
  
 ### nginx.conf 结构
 
@@ -42,12 +50,16 @@ master-workers的机制的好处
 
 	#安全问题，建议用nobody,不要用root.
 	#user  nobody;
+
 	#worker数和服务器的cpu数相等是最为适宜
 	worker_processes  2;
+
 	#work绑定cpu(4 work绑定4cpu)
 	worker_cpu_affinity 0001 0010 0100 1000
+
 	#work绑定cpu (4 work绑定8cpu中的4个) 。
 	worker_cpu_affinity 0000001 00000010 00000100 00001000  
+
 	#error_log path(存放路径) level(日志等级)path表示日志路径，level表示日志等级，
 	#具体如下：[ debug | info | notice | warn | error | crit ]
 	#从左至右，日志详细程度逐级递减，即debug最详细，crit最少，默认为crit。
@@ -59,24 +71,30 @@ master-workers的机制的好处
 ### events 相关配置
 
 	events {
-	    #这个值是表示每个worker进程所能建立连接的最大值，所以，一个nginx能建立的最大连接数，应该是worker_connections * worker_processes。
-	    #当然，这里说的是最大连接数，对于HTTP请求本地资源来说，能够支持的最大并发数量是worker_connections * worker_processes，
+	    #这个值是表示每个worker进程所能建立连接的最大值，所以，
+        一个nginx能建立的最大连接数，应该是worker_connections * worker_processes。
+	    #当然，这里说的是最大连接数，对于HTTP请求本地资源来说，
+        能够支持的最大并发数量是worker_connections * worker_processes，
 	    #如果是支持http1.1的浏览器每次访问要占两个连接，
 	    #所以普通的静态访问最大并发数是： worker_connections * worker_processes /2，
 	    #而如果是HTTP作为反向代理来说，最大并发数量应该是worker_connections * worker_processes/4。
+
 	    #因为作为反向代理服务器，每个并发会建立与客户端的连接和与后端服务的连接，会占用两个连接。
 	    worker_connections  1024;  
+
 	    #这个值是表示nginx要支持哪种多路io复用。
 	    #一般的Linux选择epoll, 如果是(*BSD)系列的Linux使用kquene。
 	    #windows版本的nginx不支持多路IO复用，这个值不用配。
 	    use epoll;
+
 	    # 当一个worker抢占到一个链接时，是否尽可能的让其获得更多的连接,默认是off 。
 	    multi_accept on;
+
 	    # 默认是on ,开启nginx的抢占锁机制。
 	    accept_mutex  on;
 	}
 	
- ### http 相关配置
+### http 相关配置
  
     http {
     #当web服务器收到静态的资源文件请求时，依据请求文件的后缀名在服务器的MIME配置文件中找到对应的MIME Type，
@@ -90,9 +108,12 @@ master-workers的机制的好处
      access_log  logs/host.access.log  main;
      
      #一条典型的accesslog：
-     #101.226.166.254 - - [21/Oct/2013:20:34:28 +0800] "GET /movie_cat.php？year=2013 HTTP/1.1" 200 5209 "http://www.baidu.com"; 
-     "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; 
-     Media Center PC 6.0; MDDR; .NET4.0C; .NET4.0E; .NET CLR 1.1.4322; Tablet PC 2.0); 360Spider"
+     #101.226.166.254 - - [21/Oct/2013:20:34:28 +0800] 
+     "GET /movie_cat.php？year=2013 HTTP/1.1" 200 5209 "http://www.baidu.com"; 
+     "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; 
+     .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; 
+     Media Center PC 6.0; MDDR; .NET4.0C; .NET4.0E; .NET CLR 1.1.4322; 
+     Tablet PC 2.0); 360Spider"
      
         #1）101.226.166.254:(用户IP)
         #2）[21/Oct/2013:20:34:28 +0800]：(访问时间)
@@ -101,9 +122,11 @@ master-workers的机制的好处
         #5）200：服务状态，200表示正常，常见的还有，301永久重定向、4XX表示请求出错、5XX服务器内部错误
         #6）5209：传送字节数为5209，单位为byte
         #7）"http://www.baidu.com"：refer:即当前页面的上一个网页
-        #8）"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; #.NET CLR 
-         3.0.30729; Media Center PC 6.0; MDDR; .NET4.0C; .NET4.0E; .NET CLR 1.1.4322; Tablet PC 2.0); 360Spider"： agent字段：通常用来记录 
-	 操作系统、浏览器版本、浏览器内核等信息
+        #8）"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; 
+          Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; 
+          #.NET CLR 3.0.30729; Media Center PC 6.0; MDDR; .NET4.0C; .NET4.0E;
+          .NET CLR 1.1.4322; Tablet PC 2.0); 360Spider"： agent字段：
+          通常用来记录 操作系统、浏览器版本、浏览器内核等信息
      
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                        '$status $body_bytes_sent "$http_referer" '
@@ -139,6 +162,7 @@ master-workers的机制的好处
     open_file_cache_valid 30s;
     
     upstream myserver{
+
          # 1、轮询（默认）
          # 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。
          # 2、指定权重
@@ -151,6 +175,7 @@ master-workers的机制的好处
          #按后端服务器的响应时间来分配请求，响应时间短的优先分配。   
          #6、url_hash（第三方）
          #按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存时比较有效。
+
          # ip_hash;
              server 192.168.161.132:8080 weight=1;
              server 192.168.161.132:8081 weight=1;
@@ -172,38 +197,41 @@ master-workers的机制的好处
            # ~* 正则匹配，不区分大小写
            # ^~  关闭正则匹配
     
-    #匹配原则：
+        #匹配原则：
     
-    # 1、所有匹配分两个阶段，第一个叫普通匹配，第二个叫正则匹配。
-    # 2、普通匹配，首先通过“=”来匹配完全精确的location
-        #   2.1、 如果没有精确匹配到， 那么按照最大前缀匹配的原则，来匹配location
-        #   2.2、 如果匹配到的location有^~,则以此location为匹配最终结果，如果没有那么会把匹配的结果暂存，继续进行正则匹配。
-        # 3、正则匹配，依次从上到下匹配前缀是~或~*的location, 一旦匹配成功一次，则立刻以此location为准，不再向下继续进行正则匹配。
-        # 4、如果正则匹配都不成功，则继续使用之前暂存的普通匹配成功的location.
+	    # 1、所有匹配分两个阶段，第一个叫普通匹配，第二个叫正则匹配。
+	    # 2、普通匹配，首先通过“=”来匹配完全精确的location
+	        #   2.1、 如果没有精确匹配到， 那么按照最大前缀匹配的原则，来匹配location
+	        #   2.2、 如果匹配到的location有^~,则以此location为匹配最终结果，如果没有那么会把匹配的结果暂存，继续进行正则匹配。
+	        # 3、正则匹配，依次从上到下匹配前缀是~或~*的location, 一旦匹配成功一次，则立刻以此location为准，不再向下继续进行正则匹配。
+	        # 4、如果正则匹配都不成功，则继续使用之前暂存的普通匹配成功的location.
 	
-        location / {   # 匹配任何查询，因为所有请求都已 / 开头。但是正则表达式规则和长的块规则将被优先和查询匹配。    
+        location / {   # 匹配任何查询，因为所有请求都已 / 开头。但是正则表达式规则和长的块规则将被优先和查询匹配。  
+  
            #定义服务器的默认网站根目录位置
            root   html;
             
            #默认访问首页索引文件的名称
            index  index.html index.htm;
         
-	   #反向代理路径
+	       #反向代理路径
             proxy_pass http://myserver;
          
-	   #反向代理的超时时间
+	       #反向代理的超时时间
             proxy_connect_timeout 10;
             proxy_redirect default;       
          }
+
          location  /images/ {    
-        root images ;
-     }
+            root images ;
+         }
      
      location ^~ /images/jpg/ {  # 匹配任何已 /images/jpg/ 开头的任何查询并且停止搜索。任何正则表达式将不会被测试。
         root images/jpg/ ;
      }
      
      location ~*.(gif|jpg|jpeg)$ {
+
           #所有静态文件直接读取硬盘
               root pic ;
           
