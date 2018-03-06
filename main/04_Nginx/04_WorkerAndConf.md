@@ -3,6 +3,7 @@ Nginx Install
 ##
 ### [返回Nginx目录](./NginxDirectory.md) [回到首页目录](/README.md)
 
+## [官方文档](http://nginx.org/en/docs/)
 
 ### 1.master&worker
 
