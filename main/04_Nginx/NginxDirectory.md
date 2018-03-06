@@ -8,6 +8,6 @@
 
 ### [_02_ Nginx_Commend](./02_Commend.md)
 
-### [_03_ Nginx_Install](./03_Install.md)
+### [_03_ Nginx_Installing](./03_Install.md)
 
 ### [_04_ Nginx_WorkerAndConf](./04_WorkerAndConf.md)
