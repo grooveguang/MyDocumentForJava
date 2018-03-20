@@ -174,7 +174,6 @@ javax.sql包下的
 
 	1.需要用到新的连接jar包，原来的jar包移除
 
-
 	2.url字符串需要改写成如下形式
 
 	jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true
