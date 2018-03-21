@@ -1,7 +1,7 @@
-MySql
+MySql Base
 ====
 ##
-### [返回Nginx目录](./NginxDirectory.md) [回到首页目录](/README.md)
+### [返回MySql目录](./MySqlDirectory.md) [回到首页目录](/README.md)
 
 	1、数据库的相关概念和特点
 	2、数据库服务器和客户端的安装

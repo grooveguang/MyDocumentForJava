@@ -1,7 +1,7 @@
 MySql Framing Introduce
 ====
 ##
-### [返回Nginx目录](./NginxDirectory.md) [回到首页目录](/README.md)
+### [返回MySql目录](./MySqlDirectory.md) [回到首页目录](/README.md)
 
 ## Introduce MySql
 
@@ -175,6 +175,7 @@ MySQL支持大型数据库，支持5000万条记录的数据仓库，32位系统
 主从复制及备份恢复
 
     my.cnf中的log-bin配置
+![](./img/logBin.png)
 
 错误日志log-error   
 
@@ -197,9 +198,11 @@ MySQL支持大型数据库，支持5000万条记录的数据仓库，32位系统
            ibdata1
            frm文件   存放表结构
            单独存放
+![](./img/showInnodb.png)
 ```
 create table mmm (id int(20) auto_increment ,name varchar(20),primary key(id)); 
 ```
+![](./img/mmm.png)
 
 如何配置：
 
@@ -219,6 +222,9 @@ MySQL的用户管理
 查看用户
 
 	select host,user,password,select_priv,insert_priv,drop_priv from mysql.user;
+
+
+![](./img/dropli4.png)
 
  host ：   表示连接类型
 
@@ -260,9 +266,14 @@ MySQL的用户管理
 	update mysql.user set user='li4' where user='wang5';
 	flush privileges;   #所有通过user表的修改，必须用该命令才能生效。
 
+![](./img/updateli4.png)
+
    5、删除用户
 
 	drop user li4 ;
+
+![](./img/dropli4.png)
+
 
  不要通过`delete from  user u where user='li4' `进行删除，系统会有残留信息保留。
 
@@ -336,15 +347,17 @@ grant select,insert,delete,drop on atguigudb.* to li4@localhost  ;
 
  4、测试连接：
 
+![](./img/connection.png)
 
 
 
 
-
+[返回顶部](#readme)	
 
 大小写问题
       
 	SHOW VARIABLES LIKE '%lower_case_table_names%'
+![](./img/lower.png)
 
 windows系统默认大小写不敏感，但是linux系统是大小写敏感的
 默认为0，大小写敏感。
@@ -363,7 +376,9 @@ windows系统默认大小写不敏感，但是linux系统是大小写敏感的
 MySQL的sql_mode合理设置
 
 sql_mode是个很容易被忽视的变量，默认值是空值，在这种设置下是可以允许一些非法操作的，比如允许一些非法数据的插入。在生产环境必须将这个值设置为严格模式，所以开发、测试环境的数据库也必须要设置，这样在开发测试阶段就可以发现问题。
- 
+
+![](./img/onlyFull.png) 
+
 sql_mode常用值如下：
 
 	ONLY_FULL_GROUP_BY：
@@ -417,6 +432,8 @@ ORACLE：
 
 插件式的存储引擎架构将查询处理和其它的系统任务以及数据的存储提取相分离。这种架构可以根据业务的需求和实际需要选择合适的存储引擎。
 
+![](./img/mysqlLogic.png)
+
 1.连接层
 
 最上层是一些客户端和连接服务，包含本地sock通信和大多数基于客户端/服务端工具实现的类似于tcp/ip的通信。
@@ -461,9 +478,13 @@ ORACLE：
 
   数据存储层，主要是将数据存储在运行于裸设备的文件系统之上，并完成与存储引擎的交互。
 
-查询说明
+[返回顶部](#readme)	
+
+## 查询说明
 
 查询流程图：
+
+![](./img/executeLogic.png)
 
  首先，mysql的查询流程大致是：
 
@@ -483,11 +504,15 @@ mysql解析器将使用mysql语法规则验证和解析查询；预处理器则�
 
 然后，mysql默认使用的BTREE索引，并且一个大致方向是:无论怎么折腾sql，至少在目前来说，mysql最多只用到表中的一个索引。
 
-SQL执行顺序
+### SQL执行顺序
 
 1、手写
 
+![](./img/write.png)
+
 2、机读
+
+![](./img/execute.png)
 
 随着Mysql版本的更新换代，其优化器也在不断的升级，优化器会分析不同执行顺序
 
@@ -507,9 +532,12 @@ SQL执行顺序
 	  #看你的mysql现在已提供什么存储引擎:
 	  mysql> show engines;  
 
+![](./img/showEngines.png)
+
 	  #看你的mysql当前默认的存储引擎:
 	  mysql> show variables like '%storage_engine%';
  
+![](./img/storageEngine.png)
 
 ## 各个引擎简介
 
@@ -558,5 +586,35 @@ CSV存储的数据直接可以在操作系统里，用文本编辑器，或者ex
  7、Federated引擎
 
 Federated引擎是访问其他MySQL服务器的一个代理，尽管该引擎看起来提供了一种很好的跨服务器的灵活性，但也经常带来问题，因此默认是禁用的。
+
+
+## MyISAM和InnoDB
+
+| 对比项 | MyISAM | InnoDB |
+| :--: | :--: | :--: |
+|外键|不支持|支持|
+|事务|不支持|支持|
+|行表锁|表锁，即使操作一条记录也会锁住整个表，不适合高并发的操作|行锁,操作时只锁某一行，不对其它行有影响，适合高并发的操作|
+|缓存|只缓存索引，不缓存真实数据|不仅缓存索引还要缓存真实数据，对内存要求较高，而且内存大小对性能有决定性的影响|
+|关注点|读性能|并发写、事务|
+|默认安装|Y|Y|
+|默认使用|N|Y|
+|自带系统表使用|Y|N|
+
+## 阿里巴巴、淘宝使用
+
+![](./img/percona.png)
+
+ Percona 为 MySQL 数据库服务器进行了改进，在功能和性能上较 MySQL 有着很显著的提升。
+
+该版本提升了在高负载情况下的 InnoDB 的性能、为 DBA 提供一些非常有用的性能诊断工具；
+
+另外有更多的参数和命令来控制服务器行为。
+
+该公司新建了一款存储引擎叫xtradb完全可以替代innodb,并且在性能和并发上做得更好,
+
+阿里巴巴大部分mysql数据库其实使用的percona的原型加以修改。
+
+AliSql+AliRedis
 
 [返回顶部](#readme)	

@@ -1,18 +1,7 @@
-#本单元目标
-	1、介绍什么是JDBC
-	2、JDBC的好处
-	3、通过简单案例演示JDBC的使用步骤 ★
-	4、介绍JDBC的相关API
-	5、PreparedStatement和Statement的区别
-	6、封装JDBCUtils类，用与获取连接和关闭连接
-	7、元数据结果集的讲解
-	8、演示大数据Blob（图片）的存取
-	9、批处理
-	10、演示事务
-	11、封装DAO
-	12、DBUtils开源框架的学习
-	13、数据库连接池的学习
-
+MySql JDBC
+====
+##
+### [返回MySql目录](./MySqlDirectory.md) [回到首页目录](/README.md)
 
 ##JDBC的概念
 
