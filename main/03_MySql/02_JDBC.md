@@ -3,7 +3,7 @@ MySql JDBC
 ##
 ### [返回MySql目录](./MySqlDirectory.md) [回到首页目录](/README.md)
 
-##JDBC的概念
+## JDBC的概念
 
 JDBC：Java Database Connectivity 是sun公司推出的一套java应用程序访问数据库的规范
 
@@ -14,7 +14,7 @@ javax.sql包下的
 
 
 
-##JDBC的好处
+## JDBC的好处
 
 	1、不需要记住多套API，大大减轻了开发压力
 
@@ -22,7 +22,7 @@ javax.sql包下的
 
 
 
-##JDBC常见的API
+## JDBC常见的API
 	
 	DriverManager 类
 		registerDriver :注册驱动 ，但不建议用，而是采用动态加载方式
@@ -57,7 +57,7 @@ javax.sql包下的
 	
 		特点：每次只能下移一行
 
-##通过案例演示JDBC的完整使用步骤 ☆（掌握步骤，代码可以不记住）
+## 通过案例演示JDBC的完整使用步骤 ☆（掌握步骤，代码可以不记住）
 		//1.注册驱动
 		DriverManager.registerDriver(new Driver());
 		
@@ -94,15 +94,15 @@ javax.sql包下的
 
 
 			
-##Blob类型数据的插入和获取
+## Blob类型数据的插入和获取
 
 
 
-###相关API
+### 相关API
 
 	Blob类的getBinaryStream()方法，返回字节读取流对象
 
-###插入
+### 插入
 	Connection connection = DBUtils.getConnection();
 		
 		PreparedStatement statement = connection.prepareStatement("insert into star values(null,'mnls',?)");
@@ -122,7 +122,7 @@ javax.sql包下的
 		DBUtils.release(connection, statement, null);
 
 
-###获取
+### 获取
 
 
 		Connection connection = DBUtils.getConnection();
@@ -149,8 +149,8 @@ javax.sql包下的
 		}
 		DBUtils.release(connection, statement, set);
 
-##批处理
-###相关API
+## 批处理
+### 相关API
 
 	Statement对象的
 		addBatch方法：  添加到批处理
@@ -168,7 +168,7 @@ javax.sql包下的
 	jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true
 
 
-###相关代码
+### 相关代码
 
 
 	@Test
@@ -212,9 +212,9 @@ javax.sql包下的
 		
 	}
 	
-##事务 应用程序提交和回滚事务
+## 事务 应用程序提交和回滚事务
 
-###相关API
+### 相关API
 
 	Connection对象的方法
 
@@ -223,7 +223,7 @@ javax.sql包下的
 		commit();提交事务
 		rollback（）；回滚事务
 
-###相关代码：
+### 相关代码：
 
 	@Test
 	public void testBatch(){
@@ -260,8 +260,8 @@ javax.sql包下的
 		
 	}
 
-##数据库连接池
-###作用
+## 数据库连接池
+### 作用
 
 	1、数据库连接对象的复用
 	2、提高了连接的效率，不用每次都去连数据库服务器，只需要从数据库连接池中找可用连接对象即可
@@ -269,7 +269,7 @@ javax.sql包下的
 
 
 
-###方式一：使用C3P0
+### 方式一：使用C3P0
 	// 1.创建连接池对象
 
 		ComboPooledDataSource cpds = new ComboPooledDataSource();
@@ -305,7 +305,7 @@ javax.sql包下的
 		// 关闭连接：不是断开，放回连接池
 		connection.close();
 
-###方式二:使用dbcp
+### 方式二:使用dbcp
 	@Test
 	public void testDbcp1() throws  Exception {
 		
@@ -330,7 +330,7 @@ Tips:
 	tomcat 使用的是dbcp
 
 
-#封装DAO
+# 封装DAO
 
 以学生管理系统为 示例：
 
