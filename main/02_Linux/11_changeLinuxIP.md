@@ -1,3 +1,10 @@
+Change Linux IP
+======
+
+by `groovyguang`
+
+#### [返回linux目录](./LinuxDirectory.md) [回到首页目录](/README.md)
+
 1：临时修改：
 1.1：修改IP地址
 # ifconfig eth0 192.168.100.100

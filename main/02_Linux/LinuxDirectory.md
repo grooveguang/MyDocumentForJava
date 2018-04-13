@@ -11,3 +11,7 @@
 ### [_03_ _Linux_Vi/Vim](./03_vim.md)
 
 ### [_04_ _Linux_PerformanceChecking](./04_linux性能检查.md)
+
+### [_10_ _centos7开启80端口](./10_centos7开启80端口.md)
+
+### [_11_ _changeLinuxIP](./11_changeLinuxIP.md)
