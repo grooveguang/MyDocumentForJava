@@ -30,6 +30,11 @@ Nginx 官网 http://nginx.org
 	./configure完成后，回到pcre目录下执行make，再执行make install
 
 1.2. 安装openssl
+	tar -zxvf pcre-8.37.tar.gz
+	cd pcre-8.34
+	./configure
+	make
+	make install
 
 	1、 解压缩openssl-xx.tar.gz包。
 	2、 进入解压缩目录，执行./config
